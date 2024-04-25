@@ -1,0 +1,23 @@
+{%extends "main/base.html" %}
+{%block title%}MEELTIMEEKS{%endblock%}
+{% block content %}
+<div class="block_container">
+    {%for item in media%}
+    <div class="block">
+        <a class="block_enner" href="{% url "player" item.id item.slug %}">
+            <div class="poster">
+                <img src="/{{item.poster}}/" alt="">
+            </div>
+            <div class="name">
+                <p>{{item.name}}</p>
+            </div>
+        </a>
+        <div class="player">
+            <span class="player_icon">
+                <p>&#9654</p>
+            </span>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock  %}

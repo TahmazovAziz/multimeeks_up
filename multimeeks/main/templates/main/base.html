@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static "css/main.css"%}">
+	<link rel="stylesheet" href="{% static "css/null.css"%}">
+
+	<title>{%block title%}{%endblock%}</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="logo">
+				<h1><a class="logo_name" href="{%url 'home_page'%}">multmeeks</a></h1>
+			</div>
+			<hr>
+			<div class="links">
+				<ul class="menu_links">
+					{%for i in media%}
+
+					<li><a class="link_item" href="/{{i.category.slug}}/">{{i.category.name}}</a></li>
+					{%endfor%}
+					
+				</ul>
+			</div>
+		</header>
+		<main class="main">
+            {%block content%}         
+                
+            {%endblock%}
+		</main>
+	</div>
+</body>
+</html>

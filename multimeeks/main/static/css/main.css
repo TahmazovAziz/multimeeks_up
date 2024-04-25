@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500&family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body{
+	background: #100e19;
+}
+.wrapper{
+	max-width: 1400px;
+	margin: 0 auto;
+}
+.header{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.logo{
+	margin-top: 20px;
+	font-family: 'Rubik Doodle Shadow', system-ui;
+	font-size: 58px;
+	text-transform: uppercase;
+	text-align: center;
+	transition: 1s;
+	margin:  0 auto;
+}
+.logo_name{
+	color:#fff;
+	transition: 1s;
+}
+.logo_name:hover{
+	transition: 1s;
+	color: green;
+}
+.logo:hover{
+	transition: 1s;
+	color: green;
+	cursor: pointer;
+}
+hr{
+	width: 70%;
+	border-radius: 30px;
+	background: red;
+	color: white;
+}
+.menu_links{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    font-family: 'Montserrat', sans-serif;
+   	margin: 20px;
+   	font-size: 16px;
+}
+
+a{
+	text-decoration: none;
+}
+.link_item{
+	text-decoration: none;
+	color:gray;
+	transition: 1s;
+}
+.link_item:hover{
+	color: #fff;
+	transition: 1s;
+}
+
+.main{
+	font-family: 'Montserrat', sans-serif;
+}
+.block_container{
+	display: grid;
+	grid-template-columns: 2fr 2fr 1fr;
+	margin: 20px auto;
+}
+.block{
+	position: relative;
+	max-width: 300px;
+	margin: 15px;
+	transition: 1s;
+
+}
+.block:hover  .player{
+	transition: 1s;
+	opacity: 1;
+}
+
+.block_enner:hover{
+	transition: 1s;
+	cursor: pointer;
+	filter: sepia(2%) brightness(35%);
+-webkit-filter: sepia(2%) brightness(35%);
+-moz-filter: sepia(2%) brightness(35%);
+}
+
+.poster>img{
+	border-radius: 10px;
+    width: 250px;
+	height: 450px;
+}
+.name{
+	width: 260px;
+	text-align: center;
+	color: #fff;
+	font-size: 21px;
+}
+.player{
+	width: 50px;
+	height: 50px;
+	background: green;
+	border-radius: 40px;
+	position: absolute;
+	opacity: 0;
+    top: 188px;
+    left: 104px;
+} 
+.player_icon{
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+}
+.player_icon>p{
+	margin: 14px;
+}
+
+@media(max-width:900px){
+	.block_container{
+		grid-template-columns: 2fr 2fr;
+	}
+}
+@media(max-width:594px){
+	.block_container{
+		grid-template-columns: 1fr;
+	}
+	.block{
+		margin: 10px auto;
+	}
+}
+@media(max-width:400px){
+	.menu_links{
+		font-size: 12px;
+	}
+	.logo{
+		font-size: 39px;
+	}
+}

@@ -1,0 +1,60 @@
+{%extends "main/base.html"%}
+{%block content%}
+{%for item in media_info%}
+<div class="info_block" >
+	{% load static %}
+
+    <link rel="stylesheet" href="{% static "css/player.css" %}">
+    <div class="poster">
+        <img src="/{{item.poster}}/" alt="">
+    </div>
+    <div class="info">
+        <div class="discription">
+            <h3 class="tblack">Discription</h3>
+            <p class="discription_text">{{item.discription}}</p>
+        </div>
+        <div class="info_list">
+            <ul>
+                <li class="info_item">
+                    <p><span class="tblack">Name</span>:{{item.name}}</p>
+                </li>
+                <li class="info_item">
+                    <p><span class="tblack">Directed by</span>:{{item.year}}</p>
+                </li>
+                <li class="info_item">
+                    <p><span class="tblack">Release</span>:{{item.direct_by}}</p>
+                </li>
+                <li class="info_item">
+                    <span class="tblack">Country</span>
+                    <br>
+                    <br>
+
+                    {% for he in item.country %}
+                    <p>{{he.name}}</p>
+                    <br>
+
+                    {% endfor %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+{%endfor%}
+<h1 class="title_player">Смотреть Бесплатно</h1>
+{% for episode in media %}
+
+<div class="player_video episode">
+    <video src="/{{episode.source}}" controls></video>
+    <p class='count'>серия:  {{episode.ep_count}}</p>
+</div>
+{% endfor %}
+<div class="buttons">
+    <button id="next">
+        <img src="{% static "image/arrow_left.png" %}" alt="">
+    </button>
+    <button id="prev">
+        <img src="{% static "image/arrow_right.png" %}" alt="">
+    </button>
+</div>
+<script src="{% static "js/script.js" %}"></script>
+{%endblock%}
