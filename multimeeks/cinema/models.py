@@ -13,17 +13,14 @@ class Media(models.Model):
     category =  models.ForeignKey('Category' , on_delete=models.PROTECT)
     def __str__(self):
         return self.name
-    
 class Episode(models.Model):
     ep_count = models.IntegerField()
     source = models.FileField(upload_to="video/%y" ,null=True,  blank=True,  validators=[FileExtensionValidator( ['mp4'] ) ])    
     media_id = models.ForeignKey('Media', on_delete=models.CASCADE)
-
-
+    
 class Category(models.Model):
     name = models.CharField(max_length=100,db_index=True)
     slug = models.SlugField(unique=True, db_index=True) 
 
     def __str__(self):
         return self.name
-    

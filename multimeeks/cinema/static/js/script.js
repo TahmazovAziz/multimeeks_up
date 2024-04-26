@@ -1,5 +1,5 @@
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
+const prevButton = document.getElementById('next');
+const nextButton = document.getElementById('prev');
 const episode = document.getElementsByClassName('episode');
 const count = document.getElementById('count')
 let corent_episode  = 0;
