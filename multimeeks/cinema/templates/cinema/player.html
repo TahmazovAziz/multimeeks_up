@@ -40,12 +40,12 @@
     </div>
 </div>
 {%endfor%}
-<h1 class="title_player">Смотреть Бесплатно</h1>
+<h1 class="title_player">Watch Free</h1>
 {% for episode in media %}
 
 <div class="player_video episode">
     <video src="/{{episode.source}}" controls></video>
-    <p class='count' id='count'>серия:  {{episode.ep_count}}</p>
+    <p class='count' id='count'>episode:  {{episode.ep_count}}</p>
 </div>
 {% endfor %}
 <div class="buttons">
@@ -56,5 +56,23 @@
         <img src="{% static "image/arrow_right.png" %}" alt="">
     </button>
 </div>
+<div class="comment">
+    <div class="form-control" id="chat-text"  rows="10">
+        {%for item in coment_room%}
+        {%with chat='chat_'%}
+        {%if chat|add:room_name == item.chatid.room_name %}                        
+        <b style='color:green'>{{item.message_text}}</b>:{{item.niknaimid.name}}<br>
+        {%else%}                               
+        {%endif%}
+        {%endwith%}
+        {%endfor%}
+    </div><br>
+    <div class="comment_write">
+        <input type="text" placeholder="you niknaim" id="chat-message-input-2">
+        <textarea type="text" placeholder="you text"  id="chat-message-input"></textarea>   
+    </div>
+        <input type="button" id="chat-message-submit" value="Send Message">
+</div>
+{{ room_name|json_script:"room-name" }}
 <script src="{% static "js/script.js" %}"></script>
 {%endblock%}

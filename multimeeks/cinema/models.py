@@ -24,3 +24,16 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+
+class ComentName(models.Model):
+    room_name = models.CharField(max_length=500)
+
+class Niknaim(models.Model):
+    name = models.CharField(max_length=200)
+
+class Message(models.Model):
+    message_text = models.TextField()
+    chatid = models.ForeignKey(ComentName , on_delete=models.CASCADE)
+    niknaimid = models.ForeignKey(Niknaim , on_delete=models.PROTECT)
+    def __str__(self):
+        return self.message_text

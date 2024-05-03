@@ -7,12 +7,13 @@ SECRET_KEY = 'django-insecure-c_x$(%9e(8442@@j1tpq@tibe9u#$@+9@0w**vp0eam2ndd=rh
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,7 +52,7 @@ TEMPLATES = [
         },
     },
 ]
-
+ASGI_APPLICATION = "multimeeks.asgi.application"
 WSGI_APPLICATION = 'multimeeks.wsgi.application'
 
 
@@ -105,6 +106,14 @@ USE_I18N = True
 USE_TZ = True
 
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [("127.0.0.1", 6379)],
+        },
+    },
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
