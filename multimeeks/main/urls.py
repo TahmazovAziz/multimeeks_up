@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path , include
-from . import views
+from .views import *
 urlpatterns = [
-    path('' , views.main_page ,name='home_page'),
-    path('<slug:cat_slug>/',views.show_category)
+    path('' , main_page ,name='home_page'),
+    path('<slug:cat_slug>/',ShowCategory.as_view())
 ]
 

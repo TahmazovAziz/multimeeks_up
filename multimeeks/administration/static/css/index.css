@@ -1,0 +1,33 @@
+.button{
+    width: 100px;
+}
+.b-view{
+    margin:10px 10px;
+}
+.plus{
+    background: #58a64d;
+    width: 64px;
+    height: 60px;
+    border-radius: 30px;
+    text-align: center;
+    transition: 1s;
+}
+.plus>p{
+    padding-top: 13px;
+    font-size: 33px;
+}
+.plus:hover{
+    transition: 1s;
+    cursor:pointer;
+    background: #38f91d;
+}
+input{
+    width: 210px;
+    height: 40px;
+}
+textarea{
+width: 310px;
+height: 55px;
+position: relative;
+top: 15px;
+}

@@ -14,11 +14,12 @@
 		<header class="header">
 			<div class="logo">
 				<h1><a class="logo_name" href="{%url 'home_page'%}">multmeeks</a></h1>
+				{%block administration%}{%endblock%}
 			</div>
 			<hr>
 			<div class="links">
 				<ul class="menu_links">
-					{%for i in media%}
+					{%for i in mediap%}
 
 					<li><a class="link_item" href="/{{i.category.slug}}/">{{i.category.name}}</a></li>
 					{%endfor%}

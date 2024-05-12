@@ -1,0 +1,23 @@
+{%extends "administration/all_view.html"%}
+{% block content %}
+{% load static %}
+{% load widget_tweaks %}
+<link rel="stylesheet" href="{% static "css/index.css"%}">
+<form method="post" enctype="multipart/form-data">
+    {%render_field form.name placeholder='media name'%}
+    {%render_field form.year placeholder='relise'%}
+    {%render_field form.discription placeholder='discription'%}
+    {%render_field form.direct_by   placeholder='direct_by'%}
+    {%render_field form.country%}
+    {%render_field form.poster%}
+    {%render_field form.slug placeholder='url name'%}
+    {%render_field form.category%}
+    {%render_field form.ep_count%}
+    {%render_field form.source%}
+    {%render_field form.media_id%} 
+    {%csrf_token%}
+    <button type="submit">sUbmit</button>
+</form>
+<p><a href='{% url "create_e" %}'>create episode</a></p>
+<p><a href='{% url "create_m" %}'>create media</a></p>
+{% endblock %}

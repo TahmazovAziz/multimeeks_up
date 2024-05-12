@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'django_countries',
     'cinema',
     'main',
+    'administration',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
