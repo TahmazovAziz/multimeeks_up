@@ -9,13 +9,4 @@
  + html/css/js
  + redis
 
-тагже билеотеки такие как:
-    
-+ Pillow  - `pip install Pillow`
-+ Django - `pip install django`
-+ django-countries - `pip install django-countries`
-+ mysqlclient - `pip install mysqlclient`
-+ channels-redis -`pip install channels-redis`
-+ channels - `python -m pip install -U 'channels[daphne]'`
-+ django-widget-tweaks 1.5.0  - `pip install django-widget-tweaks`
-  
+ 
