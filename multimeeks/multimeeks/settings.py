@@ -9,9 +9,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
-
+AUTH_USER_MODEL = 'users.users'
 INSTALLED_APPS = [
     'daphne',
     'django.contrib.admin',
@@ -25,6 +27,7 @@ INSTALLED_APPS = [
     'main',
     'administration',
     'widget_tweaks',
+    'users',
 ]
 
 MIDDLEWARE = [

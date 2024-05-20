@@ -7,6 +7,7 @@ urlpatterns = [
     path('adminitration/' , include('administration.urls')),
     path('' , include('main.urls')),
     path('player/', include('cinema.urls')),
+    path('users/', include('users.urls')),
 ]
 
 if settings.DEBUG:
