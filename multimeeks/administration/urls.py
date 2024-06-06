@@ -6,9 +6,9 @@ from .views import *
 urlpatterns = [
     path('',  include('django.contrib.auth.urls')),
     path('main', all_view, name='administration'),
-    path('update/<int:pk>/', UpdateMedia.as_view(),name='update'),
-    path('create_media/', CreateMedia.as_view(),name='create_m'),
-    path('create_episode/', CreateEpisode.as_view(), name='create_e')
+    path('update/<int:pk>/', UpdateMedia.as_view(),name='administration_update'),
+    path('create_media/', CreateMedia.as_view(),name='administration_create_media'),
+    path('create_episode/', CreateEpisode.as_view(), name='administration_create_episode')
 
 ]
     

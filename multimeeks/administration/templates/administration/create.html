@@ -18,6 +18,6 @@
     {%csrf_token%}
     <button type="submit">sUbmit</button>
 </form>
-<p><a href='{% url "create_e" %}'>create episode</a></p>
-<p><a href='{% url "create_m" %}'>create media</a></p>
+<p><a href='{% url "administration_create_media" %}'>create episode</a></p>
+<p><a href='{% url "administration_create_episode" %}'>create media</a></p>
 {% endblock %}

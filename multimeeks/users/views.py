@@ -3,6 +3,10 @@ from django.contrib.auth import authenticate, login
 from django.views import View
 from django.contrib.auth import logout
 from .forms import UserCreationForm
+from rest_framework import viewsets
+from .models import Users
+from .serializers import UsersSerializer
+
 class LogoutView(View):
     template_name = 'registration/logout.html'
 
@@ -28,3 +32,8 @@ class Register(View):
             login(request,user)
             return redirect('/')
         return render(request, self.template_name, {"form":form})            
+
+class UsersViewset(viewsets.ModelViewSet):
+    queryset = Users.objects.all()
+    serializer_class = UsersSerializer
+    

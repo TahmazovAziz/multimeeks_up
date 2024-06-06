@@ -33,10 +33,8 @@
 					<a class="link_item" href="{% url "login" %}">Login</a>
 					<a class="link_item" href="{% url "register" %}">Seg in</a>
 					{%endif%}
-					{%for i in media%}
-					{{i}}
-					<li>ss<a class="link_item" href="/{{i.category.slug}}/">{{i.category.name}}</a></li>
-					{%endfor%}
+				
+					<li><a class="link_item" href="/{{Media.category.slug}}/">{{Media.category.name}}</a></li>
 					
 				</ul>
 			</div>

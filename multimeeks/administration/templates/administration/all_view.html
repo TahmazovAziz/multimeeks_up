@@ -4,7 +4,7 @@
 {%block content%}
 {% load static %}
 <link rel="stylesheet" href="{% static "css/index.css"%}">
-<a href='{% url "create_m" %}'>
+<a href='{% url "administration_create_media" %}'>
     <div class="plus">
         <p>+</p>
     </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="buttons">
         
-        <a class="" href="{% url "update" item.id %}"><input type="button" class="button b-upd" value="Update"></a>
+        <a class="" href="{% url "administration_update" item.id %}"><input type="button" class="button b-upd" value="Update"></a>
         <a class="" href="{% url "player" item.id item.slug item.id %}"><input type="button" class="button b-view" value="Viewing"></a>
         </div>
 

@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'administration',
     'widget_tweaks',
     'users',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -38,6 +39,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'multimeeks.check_user_midleware.CheckUserMidleware',
 ]
 
 ROOT_URLCONF = 'multimeeks.urls'

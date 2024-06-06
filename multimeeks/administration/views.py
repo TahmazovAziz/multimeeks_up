@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 from cinema.models import Episode , Media  , Message
 from django.views.generic import ListView , UpdateView , CreateView
 from django.views import View
 from django.urls import reverse_lazy
 from .forms import MediaForm , EpisodeForm
+from django.contrib.auth.mixins import LoginRequiredMixin , PermissionRequiredMixin
 
 def all_view(request):
     episodes = Episode.objects.all().select_related('media_id')
@@ -15,21 +16,23 @@ def all_view(request):
     return render(request, 'administration/all_view.html' , context)
 
 
-class UpdateMedia(UpdateView):
+class UpdateMedia(PermissionRequiredMixin,UpdateView):
     model = Media
     template_name ='administration/create.html'
     form_class = MediaForm
-    EpisodeForm
+    permission_required = 'administration.add_media'
 
-class CreateMedia(CreateView):
+class CreateMedia(PermissionRequiredMixin,CreateView):
     model = Media
     template_name ='administration/create.html'
     form_class = MediaForm
     success_url = reverse_lazy('create_e')
-    
+    permission_required = 'administration.add_media'
 
-class CreateEpisode(CreateView):
+
+class CreateEpisode(PermissionRequiredMixin,CreateView):
     model = Episode
     template_name = 'administration/create.html'
     form_class = EpisodeForm
     success_url = reverse_lazy('home_page')
+    permission_required = 'administration.add_media'

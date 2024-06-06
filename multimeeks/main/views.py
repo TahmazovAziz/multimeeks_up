@@ -10,19 +10,6 @@ def main_page(request):
     }
     return render(request ,'main/main.html' , context)
 
-def show_category(request,cat_slug):
-    category = get_object_or_404(Category , slug=cat_slug)
-    media = Media.objects.filter(category=category.pk)
-    
-    context = {
-        "media":media
-    }
-    return render(request ,'main/main.html' , context)
-
-class MainPage(ListView):
-    model = Media
-    template_name = 'main/main.html'
-    context_object_name = 'mediap'
 
 class ShowCategory(ListView):
     model = Media

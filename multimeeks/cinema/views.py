@@ -2,19 +2,8 @@ from django.shortcuts import render
 from cinema.models import Episode , Media  , Message
 from django.views.generic import ListView , UpdateView
 from django.views import View
-# def player(request , media_slug , pk , room_name):
-#     media = Episode.objects.all().select_related('media_id').filter(media_id=pk)
-#     media_info = Media.objects.filter(id=pk)
-#     coment_room = Message.objects.select_related('chatid')
-#     context={
-#         "media":media,
-#         "room_name":room_name,
-#         "coment_room":coment_room,
-#         'media_info':media_info
-#     }
-
-#     return render(request,'cinema/player.html',context)
-
+from rest_framework import viewsets
+from .serializers import *
 class Player(ListView):
     model = Episode
     template_name = 'cinema/player.html'
@@ -26,3 +15,11 @@ class Player(ListView):
         context['media_info']= Media.objects.filter(id=self.kwargs['pk'])
         context['coment_room'] = Message.objects.select_related('chatid')
         return context
+
+class MediaViewset(viewsets.ModelViewSet):
+    queryset = Media.objects.all()
+    serializer_class = MediaSerializers
+
+class EpisodeViewset(viewsets.ModelViewSet):
+    queryset = Episode.objects.all()
+    serializer_class = EpisodeSerializers
