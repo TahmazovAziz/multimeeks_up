@@ -4,6 +4,7 @@ from django.views.generic import ListView , UpdateView
 from django.views import View
 from rest_framework import viewsets
 from .serializers import *
+
 class Player(ListView):
     model = Episode
     template_name = 'cinema/player.html'

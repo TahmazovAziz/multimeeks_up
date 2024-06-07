@@ -5,8 +5,6 @@ from django.urls import reverse
 from django.http import HttpResponseForbidden
 from cinema.models import Media
 class CheckUserMidleware:
-    pop = Media.objects.all()
-    print(len(pop))
     
     def __init__(self,get_response):
         self.get_response = get_response
